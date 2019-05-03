@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+  <h1>Welcome to Student Dashboard</h1>
+
+  <br />
+  <div>
+    <div class="row">
+      <div class="col-sm-4">
+        <h3>Enter the student details</h3> <br />
+      </div>
+    </div>
+    <br />
+    <div class="row">
+      <div class="col-sm-4">
+        <label>First Name </label>
+      </div>
+      <div class="col-sm-4">
+        <input [(ngModel)]="firstName" type="text" placeholder="Enter your first name" required>
+      </div>
+    </div>
+    <br />
+    <div class="row">
+      <div class="col-sm-4">
+        <label>Last Name </label>
+      </div>
+      <div class="col-sm-4">
+        <input [(ngModel)]="lastName" type="text" placeholder="Enter your last name" required>
+      </div>
+    </div>
+    <br />
+    <div class="row">
+      <div class="col-sm-4">
+        <label> Course Name</label>
+      </div>
+      <div class="col-sm-4">
+        <input [(ngModel)]="programName" type="text" placeholder="Enter program name" required>
+      </div>
+    </div>
+    <br />
+
+    <div class="row">
+      <div class="col-sm-3">
+
+      </div>
+      <div class="col-sm-2">
+        <button type="button" (click)="addDetails()" class="btn btn-primary"> Add </button>
+      </div>
+
+      <div class="col-sm-2">
+        <button type="button" (click)="clearDetails()" class="btn btn-primary"> Clear </button>
+      </div>
+
+      <div class="col-sm-3">
+      </div>
+    </div>
+
+    <div class="row" id="studentDetails" *ngIf="!displayText">
+      <div class="col-sm-4">
+        <h5>Please verify the Student details</h5><br />
+        <label>First Name :     {{firstName}}</label> <br />
+        <label>Last Name  :     {{lastName}}</label>  <br />
+        <label>Program Name:     {{programName}}</label> <br />
+      </div>
+      <div class="col-sm-4">
+      </div>
+    </div>
+    <br />
+    <div class="row" id="successMsg" *ngIf="displayText">
+      <div class="col-sm-4">
+        <h5>{{successText}}</h5><br />
+      </div>
+      <div class="col-sm-4">
+      </div>
+    </div>
+    <br/>
+
+  </div>
+</body>
+</html>
